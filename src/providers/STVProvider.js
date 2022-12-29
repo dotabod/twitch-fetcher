@@ -7,7 +7,7 @@ export default class SevenTVProvider {
         let body = await req.json();
 
         if (req.ok) {
-            return body.sets;
+            return body;
         } else {
             throw new Error(`${body.status} ${body.error} - ${body.message}`);
         }
