@@ -1,11 +1,8 @@
 const TwitchFetcher = require("../");
 
-const fetcher = new TwitchFetcher({
-    twitchClientID: process.env.TWITCH_CLIENT_ID,
-    twitchOAuth: process.env.TWITCH_OAUTH
-});
+const fetcher = new TwitchFetcher();
 
-test('Get 7TV emotes by Username', async () => {
-    const emotes = await fetcher.getEmotesByName("fapparamoarr", { "7tv": true });
+test("Get 7TV emotes by id", async () => {
+    const emotes = await fetcher.getEmotesByID("39276140", { "7tv": true });
     expect(emotes.length).not.toBe(0);
 });
