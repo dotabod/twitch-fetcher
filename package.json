@@ -1,6 +1,6 @@
 {
     "name": "twitch-fetcher",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "Fetch Twitch channel data and emotes (Includes BTTV, FFZ and 7TV)",
     "main": "./lib/index.js",
     "license": "MIT",
