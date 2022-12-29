@@ -28,27 +28,10 @@ class TwitchFetcher {
         }
 
         if (config["7tv"]) {
-            let userdata = await this.getUserData({ id });
-            result = [
-                ...result,
-                ...(await this.stvProvider.getEmotesByName(userdata.login)),
-            ];
+            result = [...result, ...(await this.stvProvider.getEmotesByID(id))];
         }
 
         return result;
-    }
-
-    async getEmotesByName(username, settings) {
-        if (username == null) {
-            throw new Error("You must specify an Username.");
-        }
-
-        const data = await this.getUserData({ username });
-        if (data == null) {
-            throw new Error("Couldn't fetch this user.");
-        }
-
-        return this.getEmotesByID(data.id, settings);
     }
 }
 
